@@ -1,2 +1,3 @@
 - CSDL đang dùng là SQL Server.
 - T build bằng Maven => sửa file pom.xml cho nó tự cài cái driver JDBC hoặc tự tải trên mạng rồi add file jar vào reference libraries của java project(SQL Server thì tải Microsoft JDBC Driver for SQL Server, MySQL thì tải Connector-J bên Oracle).
+- Lệnh truy vấn của SQL Server và MySQL có nhiều chỗ khác nhau. Ai dùng MySQL thì tự tìm hiểu (t không dùng kbt :v).
