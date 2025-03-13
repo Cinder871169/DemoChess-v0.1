@@ -67,7 +67,7 @@ public class ManagePlayersFrm extends javax.swing.JFrame implements ActionListen
         jButton_Search.setText("Search");
         jButton_Search.addActionListener(this);
 
-        jButton_Save.setText("Save");
+        jButton_Save.setText("Edit");
         jButton_Save.addActionListener(this);
         jButton_Save.setVisible(false);
 
