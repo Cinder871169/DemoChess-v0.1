@@ -125,6 +125,7 @@ public class LoginFrm extends javax.swing.JFrame implements ActionListener {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /* ...existing code... */
     private void jButton_LoginActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton_LoginActionPerformed
         // TODO add your handling code here:
         System.out.println("Button clicked");
@@ -139,16 +140,19 @@ public class LoginFrm extends javax.swing.JFrame implements ActionListener {
                 if (receptionist.getPosition().equalsIgnoreCase("Receptionist")) {
                     (new ReceptionHomeFrm(receptionist)).setVisible(true);
                     this.dispose();
-                } else
+                } else if (receptionist.getPosition().equalsIgnoreCase("Manager")) {
+                    (new ManagerHomeFrm(receptionist)).setVisible(true);
+                    this.dispose();
+                } else {
                     JOptionPane.showMessageDialog(this,
                             "The function of the role " + receptionist.getPosition()
                                     + " is under construction!");
+                }
             } else {
-                JOptionPane.showMessageDialog(this,
-                        "Incorrect username and/or password!");
+                JOptionPane.showMessageDialog(this, "Invalid username or password!");
             }
         }
-    }// GEN-LAST:event_jButton_LoginActionPerformed
+    }
 
     /**
      * @param args the command line arguments
