@@ -26,6 +26,7 @@ public class ManagerHomeFrm extends javax.swing.JFrame implements ActionListener
         jButton_Logout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(1280, 720); // Set the window size to 1280x720
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         jLabel1.setText("Manager Home");
