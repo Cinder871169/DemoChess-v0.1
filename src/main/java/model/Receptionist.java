@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author user
- */
-public class Receptionist implements Serializable{
+public class Receptionist implements Serializable {
     private int id;
     private String name;
     private String userName;
@@ -25,7 +17,8 @@ public class Receptionist implements Serializable{
     public Receptionist() {
     }
 
-    public Receptionist(int id, String name, String userName, String passWord, String position, float salary, String dob, String national, String tel) {
+    public Receptionist(int id, String name, String userName, String passWord, String position, float salary,
+            String dob, String national, String tel) {
         this.id = id;
         this.name = name;
         this.userName = userName;
@@ -108,5 +101,5 @@ public class Receptionist implements Serializable{
     public void setTel(String tel) {
         this.tel = tel;
     }
-    
+
 }

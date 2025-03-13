@@ -1,17 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- *
- * @author user
- */
-public class Chess_Match implements Serializable{
+public class Chess_Match implements Serializable {
     private int id;
     private String result;
     private String opponentName;
@@ -23,7 +15,8 @@ public class Chess_Match implements Serializable{
     public Chess_Match() {
     }
 
-    public Chess_Match(int id, String result, String opponentName, float eloGain, float elo, int tblMatchId, int tblChessPlayerId) {
+    public Chess_Match(int id, String result, String opponentName, float eloGain, float elo, int tblMatchId,
+            int tblChessPlayerId) {
         this.id = id;
         this.result = result;
         this.opponentName = opponentName;
@@ -89,5 +82,4 @@ public class Chess_Match implements Serializable{
         this.tblChessPlayerId = tblChessPlayerId;
     }
 
-    
 }

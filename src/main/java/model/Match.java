@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model;
 
 import java.io.Serializable;
-/**
- *
- * @author user
- */
-public class Match implements Serializable{
+
+public class Match implements Serializable {
     private int id;
     private String nameMatch;
     private int tblRoundId;
@@ -46,6 +39,5 @@ public class Match implements Serializable{
     public void setTblRoundId(int tblRoundId) {
         this.tblRoundId = tblRoundId;
     }
-    
-    
+
 }

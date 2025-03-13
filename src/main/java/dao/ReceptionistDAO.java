@@ -1,21 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dao;
+
 import model.Receptionist;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
-/**
- *
- * @author user
- */
-public class ReceptionistDAO extends DAO{
+public class ReceptionistDAO extends DAO {
 
     public ReceptionistDAO() {
         super();
     }
+
     public boolean checkLogin(Receptionist user) {
         boolean result = false;
         String sql = "SELECT name,position FROM tblReceptionist WHERE username = ? AND password =  ? ";
