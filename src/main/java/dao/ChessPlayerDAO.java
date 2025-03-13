@@ -30,13 +30,58 @@ public class ChessPlayerDAO extends DAO {
                 chessPlayer.setDob(rs.getDate("dob"));
                 chessPlayer.setNational(rs.getString("national"));
                 chessPlayer.setTotalPoint(rs.getFloat("elo"));
-                chessPlayer.setResult(rs.getString("result"));
                 result.add(chessPlayer);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return result;
+    }
+
+    public boolean addChessPlayer(ChessPlayer player) {
+        String sql = "INSERT INTO tblChessPlayer (name, dob, [national]) VALUES (?, ?, ?)";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, player.getName());
+            ps.setDate(2, new java.sql.Date(player.getDob().getTime()));
+            ps.setString(3, player.getNational());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error adding player: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean updateChessPlayer(ChessPlayer player) {
+        String sql = "UPDATE tblChessPlayer SET name = ?, dob = ?, [national] = ? WHERE id = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, player.getName());
+            ps.setDate(2, new java.sql.Date(player.getDob().getTime()));
+            ps.setString(3, player.getNational());
+            ps.setInt(4, player.getId());
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error updating player: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+    }
+
+    public boolean deleteChessPlayer(int id) {
+        String sql = "DELETE FROM tblChessPlayer WHERE id = ?";
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, id);
+            ps.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error deleting player: " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
     }
 }
